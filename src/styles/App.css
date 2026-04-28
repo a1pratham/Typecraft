@@ -1,0 +1,71 @@
+/* ===========================
+   App.css — layout shell
+   =========================== */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.main-inner {
+  width: 100%;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Stats row — centered */
+.stats-row {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 56px;
+  align-items: center;
+}
+
+/* Content area */
+.content-area {
+  min-height: 140px;
+  position: relative;
+}
+
+/* Restart button */
+.restart-row {
+  display: flex;
+  justify-content: center;
+}
+
+.restart-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  transition: all var(--transition-smooth);
+  letter-spacing: 0.06em;
+}
+
+.restart-btn:hover {
+  color: var(--text-secondary);
+  border-color: var(--border-subtle);
+  background: rgba(255,255,255,0.03);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .main { padding: 2rem 1rem; }
+  .main-inner { gap: 1.75rem; }
+}

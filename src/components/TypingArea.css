@@ -1,0 +1,125 @@
+.typing-wrapper {
+  position: relative;
+  cursor: text;
+}
+
+.typing-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  animation: pulse-glow 2s ease infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hint-icon {
+  font-size: 1rem;
+}
+
+.typing-hidden-input {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  border: none;
+  outline: none;
+  caret-color: transparent;
+  pointer-events: none;
+  background: transparent;
+  color: transparent;
+}
+
+.typing-container {
+  height: calc(3 * 2.6rem + 0.5rem);
+  overflow: hidden;
+  position: relative;
+  padding: 0.25rem 0;
+  scroll-behavior: smooth;
+}
+
+.typing-text {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
+  word-break: break-word;
+  white-space: pre-wrap;
+  user-select: none;
+}
+
+/* ── Character states ── */
+
+.char {
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.char--untyped {
+  color: var(--text-muted);
+}
+
+.char--correct {
+  color: var(--text-correct);
+}
+
+.char--wrong {
+  color: var(--text-wrong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.char--wrong-space {
+  background: rgba(247,37,133,0.3);
+  border-radius: 2px;
+}
+
+/* Cursor character */
+.char--cursor {
+  color: var(--text-primary);
+  position: relative;
+}
+
+.char--cursor::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 10%;
+  height: 80%;
+  width: 2px;
+  background: var(--neon-cyan);
+  border-radius: 2px;
+  box-shadow: var(--glow-cyan);
+  animation: cursor-blink 1s ease infinite;
+}
+
+/* Quote author */
+.quote-author {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  letter-spacing: 0.05em;
+  text-align: right;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .typing-text {
+    font-size: 1.05rem;
+    line-height: 2.2rem;
+  }
+  .typing-container {
+    height: calc(3 * 2.2rem + 0.5rem);
+  }
+}

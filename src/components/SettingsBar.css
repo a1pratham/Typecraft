@@ -1,0 +1,64 @@
+.settings-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: opacity var(--transition-smooth);
+}
+
+.settings-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.settings-group {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.settings-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-subtle);
+  margin: 0 0.25rem;
+}
+
+.settings-toggle {
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.settings-toggle--icon {
+  font-size: 0.72rem;
+}
+
+.settings-toggle:hover {
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.05);
+}
+
+.settings-toggle--active {
+  color: var(--neon-cyan);
+  background: rgba(0,245,212,0.08);
+  border-color: rgba(0,245,212,0.25);
+}
+
+@media (max-width: 600px) {
+  .settings-bar { gap: 0.35rem; padding: 0.6rem 0.75rem; }
+  .settings-toggle { padding: 0.3rem 0.6rem; font-size: 0.72rem; }
+  .settings-divider { margin: 0; }
+}

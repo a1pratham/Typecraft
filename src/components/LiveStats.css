@@ -1,0 +1,58 @@
+.live-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.live-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.live-stat__value {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.live-stat__label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.pct {
+  font-size: 1.4rem;
+}
+
+.live-stat--wpm .live-stat__value {
+  color: var(--neon-cyan);
+  text-shadow: var(--glow-cyan);
+}
+
+.live-stat--time .live-stat__value {
+  color: var(--text-primary);
+}
+
+.live-stat--time.live-stat--danger .live-stat__value {
+  color: var(--neon-pink);
+  text-shadow: var(--glow-pink);
+  animation: pulse-glow 0.5s ease infinite;
+}
+
+.live-stat--acc .live-stat__value {
+  color: var(--neon-purple);
+}
+
+@media (max-width: 480px) {
+  .live-stats { gap: 1.2rem; }
+  .live-stat__value { font-size: 1.8rem; }
+}
